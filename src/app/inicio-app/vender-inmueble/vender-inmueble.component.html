@@ -1,0 +1,354 @@
+<div class="header__row">
+  <div class="container-principal">
+    <div class="container-primario">
+      <img class="img-contacto" src="../../../assets/img/vender-inmueble.png">
+
+    </div>
+    <div class="">
+      <div class="div-apartado1">
+        <label class="texto-apartado1" for="">Ingrese los detalles de su inmueble</label>
+      </div>
+
+    </div>
+    <div class="container-secundario">
+
+      <div class="container-secundario-2">
+        <div>
+          <label class="texto-subtitulo" for="">Registro del Inmueble</label>
+        </div>
+        <div class="div-linea"></div><br>
+        <div>
+          <div class="row">
+            <div class="col-xs-4 col-sm-6 col-md-4">
+              <label class="texto-legal-label">¿El inmueble está inscrito en SUNARP?</label>
+              <div class="row espacio-caracteristicas">
+                <div class="col-xs-3 col-sm-6 col-md-4">
+                  <div class="form-check">
+                    <input class="form-check-input check-caracteristica" type="checkbox" value="1" id="flexCheckDefault" [(ngModel)]="checksi" (click)="onClickCheckSi()">
+                    <label class="form-check-label texto-legal-label">
+                      SI
+                    </label>
+                  </div>
+                </div>
+                <div class="col-xs-3 col-sm-6 col-md-4">
+                  <div class="form-check">
+                    <input class="form-check-input check-caracteristica" type="checkbox" value="0" id="flexCheckDefault" [(ngModel)]="checkno" (click)="onClickCheckNo()">
+                    <label class="form-check-label texto-legal-label">
+                    NO
+                    </label>
+                  </div>
+                </div>
+
+            </div>
+            </div>
+
+          <div class="col-xs-4 col-sm-6 col-md-4">
+            <label *ngIf="checksi" class="texto-legal-label" for="">Número del título de propiedad</label>
+            <label *ngIf="checkno" class="texto-legal-label" for="">Ingrese tipo y número de documento</label>
+            <input *ngIf="checksi || checkno" class="form-control text-select" type="text" placeholder="Detallar" aria-label="default input example">
+          </div>
+
+          </div>
+
+        </div>
+
+
+        <br>
+        <div>
+          <label class="texto-subtitulo" for="">Descripción</label>
+        </div>
+        <div class="div-linea"></div><br>
+        <div class="row">
+
+          <div class="col-xs-3 col-sm-6 col-md-4 col-lg-3">
+            <label class="texto-legal-label" for="">Tipo de Inmueble</label>
+            <select class="form-select text-select">
+              <option selected>Seleccionar</option>
+              <option *ngFor="let tipoinmueble of listTipoInmueble" selected>{{tipoinmueble.conc_descripcion}}</option>
+            </select>
+          </div>
+          <div class="col-xs-3 col-sm-6 col-md-4 col-lg-3">
+            <label class="texto-legal-label" for="">Tamaño del inmueble (m²)</label>
+            <input class="form-control text-select" type="text" placeholder="Ingresar solo números" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
+          <div class="col-xs-2 col-sm-6 col-md-4 col-lg-2">
+            <label class="texto-legal-label" for="">Antigüedad (años)</label>
+            <input class="form-control div-cell" type="text" placeholder="" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
+          <div class="col-xs-2 col-sm-6 col-md-4 col-lg-2">
+            <label class="texto-legal-label" for="">N° de habitaciones</label>
+            <input class="form-control div-cell" type="text" placeholder="" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
+          <div class="col-xs-2 col-sm-6 col-md-4 col-lg-2">
+            <label class="texto-legal-label" for="">N° de baños</label>
+            <input class="form-control div-cell" type="text" placeholder="" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col-sm-6 col-md-4 col-lg-3">
+            <label class="texto-legal-label" for="">Departamento</label>
+            <select class="form-select text-select" (change)="onChangeDepartamento($event.target)">
+              <option selected>Seleccionar</option>
+              <option *ngFor="let departamento of listDepartamentos"  [value]="departamento.depa_id">{{departamento.depa_nombre}}</option>
+            </select>
+          </div>
+          <div class="col-xs-3 col-sm-6 col-md-4 col-lg-3">
+            <label class="texto-legal-label" for="">Ciudad</label>
+            <select class="form-select text-select" (change)="onChangeProvincia($event.target)">
+              <option selected>Seleccionar</option>
+              <option *ngFor="let provincia of listProvincias" selected [value]="provincia.prov_id">{{provincia.prov_nombre}}</option>
+            </select>
+          </div>
+          <div class="col-xs-3 col-sm-6 col-md-4 col-lg-3">
+            <label class="texto-legal-label" for="">Distrito</label>
+            <select class="form-select text-select" (change)="onChangeProvincia($event.target)">
+              <option selected>Seleccionar</option>
+              <option *ngFor="let distritos of listDistritos" selected [value]="distritos.dist_id">{{distritos.dist_nombre}}</option>
+            </select>
+          </div>
+          <div class="col-xs-3 col-sm-6 col-md-4 col-lg-3">
+            <label class="texto-legal-label" for="">Dirección</label>
+            <input class="form-control text-select" type="text" placeholder="Nombre de calle,avenida,etc" aria-label="default input example">
+          </div>
+        </div><br>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="padding: 0px;">
+          <div>
+            <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]="zoon" [fullscreenControl]="true">
+              <agm-marker *ngFor="let marcador of marcadores; let i = index" [latitude]="marcador.lat" [longitude]="marcador.lng">
+                <agm-info-window>
+                    <div>
+                        <label for="">{{marcador.titulo}}</label>
+                    </div>
+                    <div>
+                        <label for="">{{descripcion}}</label>
+                    </div>
+                </agm-info-window>
+            </agm-marker>
+          </agm-map>
+          </div>
+
+        </div><br>
+
+        <div>
+          <label class="texto-subtitulo" for="">Características generales</label>
+        </div>
+        <div class="div-linea"></div><br>
+         <div class="row espacio-caracteristicas">
+          <div class="col-xs-3 col-sm-4 col-md-3" *ngFor="let caracteristicas of parametroCaracteristica">
+            <div class="form-check">
+              <input [checked]="false" class="form-check-input check-caracteristica" type="checkbox" value="0" id="checkCaracteristica{{caracteristicas.para_id}}">
+              <label class="form-check-label texto-legal-label" >
+                {{caracteristicas.para_cadena1}}
+              </label>
+            </div>
+          </div>
+<!--           <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="">
+              <label class="form-check-label texto-legal-label" >
+                Patio
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="" >
+              <label class="form-check-label texto-legal-label" >
+                Lavandería
+              </label>
+            </div>
+
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="">
+              <label class="form-check-label texto-legal-label" >
+                Ascensor
+              </label>
+            </div>
+
+          </div>
+
+         </div>
+         <div class="row espacio-caracteristicas">
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="" >
+              <label class="form-check-label texto-legal-label" >
+                Almacén
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="" >
+              <label class="form-check-label texto-legal-label" >
+                Piscina
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="" >
+              <label class="form-check-label texto-legal-label" >
+                Terraza
+              </label>
+            </div>
+          </div> -->
+         </div>
+         <div>
+          <label class="texto-subtitulo" for="">Servicios</label>
+        </div>
+        <div class="div-linea"></div><br>
+        <div class="row espacio-caracteristicas">
+          <div class="col-xs-3 col-sm-4 col-md-3" *ngFor="let servicio of parametroServico">
+            <div class="form-check">
+              <input  class="form-check-input check-caracteristica" type="checkbox" value="0" id="checkServicio{{servicio.para_id}}">
+              <label class="form-check-label texto-legal-label" >
+                {{servicio.para_cadena1}}
+              </label>
+            </div>
+          </div>
+          <!-- <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="" >
+              <label class="form-check-label texto-legal-label">
+                Gas Natural
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="" >
+              <label class="form-check-label texto-legal-label">
+                Aire Acondicionado
+              </label>
+            </div>
+          </div> -->
+        </div>
+        <!-- <div class="row espacio-caracteristicas">
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="">
+              <label class="form-check-label texto-legal-label" >
+                Agua
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="form-check">
+              <input class="form-check-input check-caracteristica" type="checkbox" value="" >
+
+              <label class="form-check-label texto-legal-label" >
+                Calefacción
+              </label>
+            </div>
+          </div>
+        </div> --><br>
+        <div>
+          <label class="texto-subtitulo" for="">Documentos de tu inmueble</label>
+        </div>
+        <div class="div-linea"></div><br>
+        <div class="row">
+          <label class="texto-legal-label" for="">Ingresa los documentos legales para la verificación de la propiedad del inmueble, así como fotos de la propiedad para la venta</label>
+         <strong class="texto-legal-label" for="">NOTA: Si desea subir más de un archivo, deberá comprimirlos</strong>
+        </div><br>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4">
+
+            <label class="btn btn-secondary btn-enviar" > Subir documentos
+              <input class="form-control"  type="file" (change)="subirArchivos($event)" style="display: none;" accept="image/*,.doc,.docx,.pdf,.zip,.rar,.7zip">
+            </label>
+
+          </div>
+          <div *ngIf="listNombresArchivos.length >0" class="col-xs-8 col-sm-8 col-md-8">
+            <li class="texto-legal-label" *ngFor="let item of listNombresArchivos">{{item}}</li>
+          </div>
+        </div>
+        <div><br>
+          <label class="texto-subtitulo" for="">Comentarios sobre el inmueble</label>
+        </div>
+        <div class="div-linea"></div><br>
+        <div class="row">
+          <div class="col-12">
+            <textarea class="form-control text-select" id="exampleFormControlTextarea1" rows="3" placeholder="Otras características, referencias, beneficios, observaciones, etc."></textarea>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="div-apartado1">
+      <label class="texto-apartado1" for="">Precio e información de contacto</label>
+    </div>
+    <div class="container-secundario">
+      <div class="container-secundario-2">
+        <div>
+          <label class="texto-subtitulo" for="">Datos Personales</label>
+        </div>
+        <div class="div-linea"></div><br>
+        <div class="row">
+          <div class="col-xs-3 col-sm-6 col-md-3">
+            <label class="texto-legal-label" for="">Tipo de documento</label>
+            <select class="form-select text-select">
+              <option selected>Seleccionar</option>
+              <option *ngFor="let tipoinmueble of listDocumento" selected [value]="tipoinmueble.conc_id">{{tipoinmueble.conc_descripcion}}</option>
+            </select>
+          </div>
+          <div class="col-xs-3 col-sm-6 col-md-3">
+            <label class="texto-legal-label" for="">N° documento</label>
+            <input class="form-control text-select" type="text" placeholder="N° de documento" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
+          <div class="col-xs-6 col-sm-12 col-md-6">
+            <label class="texto-legal-label" for="">Nombres completos</label>
+            <input class="form-control text-select" type="text" placeholder="Nombres y apellidos" aria-label="default input example">
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-xs-3 col-sm-4 col-md-3">
+            <label class="texto-legal-label" for="">Email</label>
+            <input type="email" class="form-control text-select" id="exampleFormControlInput1" placeholder="Email">
+          </div>
+          <div class="col-xs-3 col-sm-4 col-md-3">
+            <label class="texto-legal-label" for="">N° Teléfono 1</label>
+            <input class="form-control text-select" type="text" placeholder="Teléfono" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
+          <div class="col-xs-3 col-sm-4 col-md-3">
+            <label class="texto-legal-label" for="">N° Teléfono 2</label>
+            <input class="form-control text-select" type="text" placeholder="Teléfono" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          </div>
+        </div><br>
+        <div>
+          <label class="texto-subtitulo" for="">Precio del inmueble</label>
+        </div>
+        <div class="div-linea"></div><br>
+        <div class="row">
+          <div class="col-xs-3 col-sm-6 col-md-3">
+            <label class="texto-legal-label" for="">Moneda</label>
+            <select class="form-select text-select">
+              <option selected>Seleccionar</option>
+              <option *ngFor="let tipoinmueble of tipoMoneda">{{tipoinmueble.descripcion}}</option>
+            </select>
+          </div>
+          <div class="col-xs-3 col-sm-6 col-md-3">
+            <label class="texto-legal-label" for="">Precio</label>
+            <input class="form-control text-select" type="text" placeholder="Ingresar solo números" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46'>
+          </div>
+        </div>
+
+      </div>
+    </div><br>
+    <div class="justify-content-md-center">
+      <div class="div-button-publicar">
+        <button type="button" class="btn btn-secondary btn-publicar" (click)="publicar()">Publicar</button>
+      </div>
+    </div><br>
+
+  </div>
+</div>
+<div>
+  <app-footer-app></app-footer-app>
+</div>

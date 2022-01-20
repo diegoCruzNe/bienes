@@ -1,0 +1,202 @@
+<div class="header__row">
+  <div class="container-principal-detalle">
+    <div class="container-primario">
+      <div class="row" style="margin:0px">
+        <div class="row" >
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="texto-detalle">
+              <label for="">Departamento · 145m² · 3 Dormitorios · 2 baños</label>
+            </div>
+            <div class="texto-detalle-1">
+              <label for="" class="color_principal">LIMA CERCADO</label>
+            </div>
+  
+          </div>
+          <div class="col-12 col-sm-10 col-md-12 col-lg-8 col-xl-8">
+            <i class="bi bi-fullscreen icon-extender-imagen" (click)="abrirFoto('mostrar_imagen')" style="cursor: pointer;z-index: 1000;"></i>
+            <div class="img-detalle-catalgo " style="cursor: pointer">
+              <img  class="img-contacto fadeInDown " id="mostrar_imagen" src="../../../assets/imagen/lista-imagenes/{{imagen_principal}}" >
+              <!-- <div *ngFor=" let listaimagenes of listImagenes">
+                <img *ngIf="listaimagenes.flag == 1" class="img-contacto" src="{{listaimagenes.src}}">
+                <img *ngIf="listaimagenes.flag == 2" class="img-contacto" src="{{listaimagenes.src}}">
+                <img *ngIf="listaimagenes.flag == 3" class="img-contacto" src="{{listaimagenes.src}}">
+                <img *ngIf="listaimagenes.flag == 4" class="img-contacto" src="{{listaimagenes.src}}">
+              </div> -->
+
+            </div><br>
+            <div class="carousel">
+              <div class="carousel__contenedor">
+                <button aria-label="Anterior" class="carousel__anterior">
+                  <i class="bi bi-chevron-left icono-anterior" ></i>
+                </button> 
+                  <div class="carousel__lista">
+                    <div class="carousel__elemento" (click)="imagenMostrar('imagen3.jpg')">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen3.jpg"  alt="">
+                    </div>
+                    <div class="carousel__elemento" (click)="imagenMostrar('imagen1.jpg')">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen1.jpg"  alt="">
+                    </div>
+                    <div class="carousel__elemento" (click)="imagenMostrar('imagen2.jpg')" >
+                      <img src="../../../assets/imagen/lista-imagenes/imagen2.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento" (click)="imagenMostrar('imagen4.jpg')">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen4.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento" (click)="imagenMostrar('imagen1.jpg')">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen1.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen4.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen1.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen3.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen2.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen4.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen3.jpg" alt="">
+                    </div>
+                    <div class="carousel__elemento">
+                      <img src="../../../assets/imagen/lista-imagenes/imagen3.jpg" alt="">
+                    </div>
+                  </div>
+                <button aria-label="Siguiente" class="carousel__siguiente">
+                  <i class="bi bi-chevron-right icono-siguiente" ></i>
+                </button>
+
+              </div>
+            </div>
+            <div role="tablist" class="carousel__indicadores"></div>
+
+
+
+           <!--  <div class="img-detalle-catalgo">
+              <div class="row row-cols-4">
+                <div *ngFor="let lista of   ">
+                  <div class="col">
+                    <button type="button" (click)="imagen1(lista)" class="btn btn-outline-primary"><img class="img-contacto-2" src="{{lista.src}}"></button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="img-detalle-catalgo">
+              <p>
+                Por ocasión REMATO departamento en moderna zona residencial de Urb. Campoy, Residencial Santa Rita I, en 5to piso. 46 mts2, consta de sala-comedor, cocina, lavandería, 3 cuartos (cuarto principal amplio) y 2 baños completo, todo con buena distribución y buenos acabados (con piso de cerámica y puertas de cedro). Dentro de condominio, cerca establecimientos comerciales y colegios, TOTTUS, CANDY, INNOVA SCHOOLS y a solo unas cuadras de Av. Principal.
+              </p>
+            </div><br>
+            <div class="img-detalle-catalgo">
+              <div>
+                <label class="texto-titulo" for="">Características generales</label>
+              </div>
+              <div class="div-linea color_principal_background"></div><br>
+              <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                  <p>Precio: </p>
+                  <p>Dormitorios: </p>
+                  <p>Baños: </p>
+                  <p>Tamaño: </p>
+                  <p>Antigüedad: </p>
+                  <p>Estacionamiento: </p>
+
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                  <p>Almacén: </p>
+                  <p>Patio: </p>
+                  <p>Piscina: </p>
+                  <p>Lavandería: </p>
+                  <p>Terraza: </p>
+                  <p>Ascensor: </p>
+                </div>
+              </div><br>
+              <div>
+                <label class="texto-titulo" for="">Servicios</label>
+              </div>
+              <div class="div-linea color_principal_background"></div><br>
+              <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                  <p>Luz: </p>
+                  <p>Agua: </p>
+                  <p>Gas Natural: </p>
+                  <p>Calefacción: </p>
+                  <p>Aire Acondicionado: </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-12 col-sm-10 col-md-12 col-lg-4 col-xl-4">
+            <div class="div-apartado-mensaje">
+              <div class="div-apartado-mensaje-2">
+                <div>
+                  <label for="">Mensaje</label>
+                  <hr class="subrayar-mensaje">
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                    <label for=""></label>
+                    <select class="form-select text-select">
+                      <option selected>Tipo documento</option>
+                      <option *ngFor="let tipoinmueble of listDocumento" selected [value]="tipoinmueble.conc_id">{{tipoinmueble.conc_descripcion}}</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                    <label for=""></label>
+                    <input class="form-control text-select" type="text" placeholder="N° de documento" aria-label="default input example">
+                  </div>
+                </div><br>
+                <div>
+                  <input class="form-control text-select" type="text" placeholder="Nombres y apellidos" aria-label="default input example">
+                </div><br>
+                <div class="row">
+                  <div class="col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                    <label for=""></label>
+                    <input class="form-control text-select" type="text" placeholder="Email" aria-label="default input example">
+                  </div>
+                  <div class="col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                    <label for=""></label>
+                    <input class="form-control text-select" type="text" placeholder="Teléfono" aria-label="default input example">
+                  </div>
+                </div><br>
+                <div>
+                  <textarea class="form-control text-select" id="exampleFormControlTextarea1" rows="3" placeholder="Mensaje"></textarea>
+                </div><br>
+
+                  <div >
+                    <button type="button" class="btn btn-secondary btn-vermas color_principal_background color_principal_background_buttons">Contactar</button>
+                  </div><br>
+                  <div>
+                    <button type="button" (click) = "whatsapp()" class="btn btn-secondary btn-vermas-ws">Contactar por whatsapp</button>
+                  </div><br>
+                  <div>
+                    <label for="">Al enviar estás aceptando los Terminos y Condiciones de Uso y la Política de Privacidad</label>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div>
+      <app-footer-app></app-footer-app>
+    </div>
+  </div>
+</div>
+
+<div id="myModal" class="modal-foto-app" [ngStyle]="{'display': modal}">
+  <span (click)="cerrar_foto()" class="close-foto-app">&times;</span>
+  <img class="modal-content-foto-app" id="myImg" src="{{imagen}}">
+  <div id="caption-foto-app"></div>
+</div>
+

@@ -1,0 +1,135 @@
+<div class="header__row">
+  <div class="container-principal">
+    <div class="container-primario">
+      <img class="img-contacto" src="../../../assets/img/asesoria-legal.png">
+    </div>
+    <div class="row">
+    <div class="div-detalle">
+        <label class="texto-div-detalle">Contamos con especialistas en asesoria legal inmobiliaria.</label>
+      </div>
+    </div>
+    <div class="div-frm-ancho div-frm-alto div-apartado">
+      <div class="row">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xl-4 div-parte1">
+          <label class="texto-lable-documentos">Solicítalo aquí:</label>
+          <div class="div-linea"></div><br>
+          <label class="texto-lable-documentos">De acuerdo al caso adjuntar los siguientes documentos:</label>
+
+          <ul class="ul-documentos">
+            <li class="li-documentos" *ngFor="let item of listRequisitos">{{item.para_cadena1}}</li>
+          </ul>
+        </div>
+        <div class="col-md-8 col-lg-8 col-sm-8">
+          <div class="div-parte2">
+            <div class="texto-legal">
+              <label >Detalles de tu caso</label><!--PARTE 1-->
+            </div>
+            <div class="div-linea"></div><br>
+            <div>
+              <label class="texto-legal-label">Tipo de asesoría</label><br>
+              <select class="form-select text-select">
+                <option selected>Seleccionar</option>
+              <option *ngFor="let tipoasesoria of listTipoAsesoria" selected>{{tipoasesoria.para_cadena1}}</option>
+              </select>
+            </div><br>
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <label class="texto-legal-label">Área total de la propiedad</label><br>
+                <input class="form-control text-select" type="text" placeholder="En m2 "  aria-label="default input example">
+              </div>
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <label class="texto-legal-label">Tipo de Inmueble</label><br>
+                <select class="form-select text-select">
+                  <option selected>Seleccionar</option>
+                  <option *ngFor="let tipoinmueble of listTipoInmueble" selected>{{tipoinmueble.conc_descripcion}}</option>
+                </select>
+              </div>
+
+            </div><br>
+            <div>
+              <label class="texto-legal-label">¿El inmueble está inscrito en SUNARP?</label>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="checksi" (click)="onClickCheckSi()">
+                  <label class="form-check-label text-select">
+                    SI
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="checkno" (click)="onClickCheckNo()">
+                  <label class="form-check-label text-select">
+                  NO
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div><br>
+              <div>
+                <label class="texto-legal-label">Describe tu caso</label>
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control text-select" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Mensaje</label>
+              </div>
+            </div>
+              <br>
+            <label class="texto-legal">Datos de contacto</label><!--PARTE 2-->
+            <div class="div-linea"></div><br>
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <select class="form-select text-select">
+                  <option selected>Tipo de documento</option>
+                  <option *ngFor="let tipodoc of listTipoDocumento" selected>{{tipodoc.conc_descripcion}}</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-lg-6 col-sm-6">
+                <input class="form-control text-select" type="text" placeholder="Numero de documento" aria-label="default input example">
+              </div>
+            </div><br>
+              <div>
+                <input class="form-control text-select" type="text" placeholder="Nombres y apellidos" aria-label="default input example">
+              </div> <br>
+              <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                  <input type="email" class="form-control text-select" id="exampleFormControlInput1" placeholder="Email">
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                  <input class="form-control text-select" type="text" placeholder="Teléfono" aria-label="default input example">
+                </div>
+
+              </div>
+                <div class="ul-div">
+                  <label class="texto-legal-label">Si cuentas con algún documento sustentatorio, puedes adjuntarlo a tu solicitud:</label>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <label class="btn btn-dark btn-file" > Adjuntar
+                      <input class="form-control"  type="file" (change)="subirArchivos($event)" style="display: none;" multiple accept="image/*,.doc,.docx,.pdf">
+                    </label>
+                  </div>
+                  <div *ngIf="listNombresArchivos.length >0" class="col-xs-8 col-sm-8 col-md-8">
+                    <li class="texto-legal-label" *ngFor="let item of listNombresArchivos">{{item}}</li>
+                  </div>
+                </div>
+                <div class="ul-btn">
+                  <button type="button" class="btn btn-secondary btn-enviar">Enviar</button>
+                </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<div>
+  <app-footer-app></app-footer-app>
+</div>
+
+
+

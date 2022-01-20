@@ -1,0 +1,74 @@
+<div style="text-align: center;margin-top:70px;font-size:21px;font-weight:bold">
+    PORTAL WEB
+</div>
+
+<!-- <div class="mat-elevation-z8" style="margin: 20px;">
+    <mat-table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
+      <ng-container matColumnDef="trigger">
+        <mat-header-cell *matHeaderCellDef>
+            <mat-icon>menu</mat-icon> </mat-header-cell>
+        <mat-cell *matCellDef="let element; let i = dataIndex;">
+            <span  (click)="expandedElement[element.recId] = !expandedElement[element.recId]" 
+            [ngClass]="[expandedElement[element.recId] ?  'active' : 'inActive']"  class="btnToggleExpand"></span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container [matColumnDef]="column.id" *ngFor="let column of visibleColumns">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>{{ column.label }}</mat-header-cell>
+    
+        <mat-cell *matCellDef="let row">
+          {{ row[column.id] }}
+        </mat-cell>
+      </ng-container>
+
+
+    <ng-container matColumnDef="hidden">
+        <mat-cell *matCellDef="let row;let i = dataIndex;" class="matCell" fxLayout="column" fxLayoutAlign="center start">
+            <p *ngFor="let hiddenColumn of hiddenColumns" fxLayout="row" class="m8">
+                <strong>
+                    {{ hiddenColumn.name }}: 
+                </strong>
+                <span>
+                    {{ row[hiddenColumn.id] }}
+                </span>
+            </p>
+        </mat-cell>
+    </ng-container>
+
+  
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Name"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Name"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Weight"> {{element.weight}} </mat-cell>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Symbol"> {{element.symbol}} </mat-cell>
+      </ng-container>
+
+  
+      <mat-header-row *matHeaderRowDef="visibleColumnsIds" class="matHeaderRow"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: visibleColumnsIds;"></mat-row>
+
+      <mat-row *matRowDef="let row; let i = dataIndex; columns: ['hidden'];" [@detailExpand]="expandedElement.length && expandedElement[row.recId] ? 'expanded' : 'collapsed'"
+      style="overflow: hidden" class="matRowHidden hidden-row-{{row.recId}} hidColLength-{{hiddenColumns.length}}" [ngClass]="expandedElement[row.recId] ? 'expanded' : 'collapsed'"></mat-row>
+
+
+    </mat-table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div> -->

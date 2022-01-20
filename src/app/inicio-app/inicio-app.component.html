@@ -1,0 +1,240 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Cargando...</p>
+  </ngx-spinner>
+
+<div class="header__row">
+        <div class="container-principal">
+            <div class="container-primario">
+                <div class="container-imagenes"  [style.background-image]="imagen_completa">
+
+<!--                     <ul class="slider">
+                      <li id="slide1" [hidden]="hidden_imagen_uno" class="grow" >
+                        <img class="img-desplazamiento" src="{{ruta_imagen}}{{imagen_principal}}">
+                      </li>
+                        <li id="slide2" [hidden]="hidden_imagen_dos">
+                        <img class="img-desplazamiento" src="../../assets/img/logo-principal-02-web.jpg">
+                      </li>
+                      <li id="slide3" [hidden]="hidden_imagen_tres">
+                        <img class="img-desplazamiento" src="../../assets/img/logo-principal-3.png">
+                      </li>
+                    </ul>
+
+                    <ul class="menu">
+                      <li>
+                        <a  id="primer-imagen" (click)="primeraImagen()" style="cursor: pointer;"></a>
+                      </li>
+                      <li>
+                        <a id="segundo-imagen" (click)="segundaImagen()" style="cursor: pointer;"></a>
+                      </li>
+                       <li>
+                        <a id="tercer-imagen" (click)="terceraImagen()" style="cursor: pointer;"></a>
+                      </li>
+                    </ul> -->
+
+                  </div>
+                  <div class="div-buscador" >
+                    <h1 class="titulo-buscador">Encuentra tu lugar ideal</h1>
+                    <div>
+                      <div class="input-group div-llenar-buscador">
+                        <!-- <button class="btn btn-outline-secondary dropdown-toggle seleccionar-tipo-inmueble" type="button" data-bs-toggle="dropdown" aria-expanded="false">Seleccionar</button>
+                        <ul class="dropdown-menu" style="border-radius: 18px;">
+                          <li class="contenido-seleccionar"><a class="dropdown-item item-lugar-ideal" >Departamento</a></li>
+                          <li class="contenido-seleccionar"><a class="dropdown-item item-lugar-ideal" >Casa</a></li>
+                          <li class="contenido-seleccionar"><a class="dropdown-item item-lugar-ideal" >Terreno</a></li>
+                          <li class="contenido-seleccionar"><a class="dropdown-item item-lugar-ideal" >Local</a></li>
+                          <li class="contenido-seleccionar"><a class="dropdown-item item-lugar-ideal" >Todos</a></li>
+                        </ul> -->
+                        <div> 
+                          <select class="form-select text-select select-seleccionar-inmueble" [(ngModel)]="filtroCatalogo.idtipoinmueble">
+                            <option [value]='0' selected>Seleccionar</option>
+                            <option *ngFor="let tipoinmueble of listTipoInmueble" selected [value]="tipoinmueble.conc_correlativo">{{tipoinmueble.conc_descripcion}}</option>
+                          </select>
+                        </div>
+                        <input type="text" class="form-control input-buscador" placeholder="Ingresa una ubicacíon o una característica" aria-label="Text input with 2 dropdown buttons">
+                        <button class="btn btn-outline-secondary buscar-llenado btn-sm" type="button" id="button-addon2"><i class="bi bi-search icono-buscar"></i><span class="bottom-buscar">Buscar</span></button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-secundario">
+
+                <div class="catalogo">
+                  <div class="container-secundario"  >
+                    <div class="row">
+                      <div class="col-xs-6 col-md-12 col-lg-3 col-sm-12 col-xl-3 div-container-busqueda">
+                        <div class="container-busqueda">
+                          <div>
+                            <label for="" style="font-weight: bold;color: #323232;">MEJORA TU BÚSQUEDA</label>
+                            <hr style="margin: 0px 0px 17px;">
+                          </div>
+                          <div style="margin-bottom:10px">
+                            <label>Region</label>
+                            <select class="form-select text-select" [(ngModel)]="filtroCatalogo.idregion" (change)="onChangeDepartamento($event.target)">
+                              <option [value]='0' selected>Seleccionar</option>
+                              <option *ngFor="let departamento of listDepartamentos"  [value]="departamento.depa_id">{{departamento.depa_nombre}}</option>
+                            </select>
+                          </div>
+                          <div style="margin-bottom:10px">
+                            <label>Ciudad</label><br>
+                            <select class="form-select text-select" [(ngModel)]="filtroCatalogo.idciudad" (change)="onChangeProvincia($event.target)">
+                              <option [value]='0' selected>Seleccionar</option>
+                              <option *ngFor="let provincia of listProvincias" selected [value]="provincia.prov_id">{{provincia.prov_nombre}}</option>
+                            </select>
+                          </div>
+                          <div style="margin-bottom:10px">
+                            <label>Distrito</label><br>
+                            <select class="form-select text-select" [(ngModel)]="filtroCatalogo.iddistrito" >
+                              <option [value]='0' selected>Seleccionar</option>
+                              <option *ngFor="let distritos of listDistritos" selected [value]="distritos.dist_id">{{distritos.dist_nombre}}</option>
+                            </select>
+                          </div>
+                          <div style="margin-bottom:10px">
+                            <label>Tipo de inmueble</label><br>
+                            <select class="form-select text-select" [(ngModel)]="filtroCatalogo.idtipoinmueble">
+                              <option [value]='0' selected>Seleccionar</option>
+                              <option *ngFor="let tipoinmueble of listTipoInmueble" selected [value]="tipoinmueble.conc_correlativo">{{tipoinmueble.conc_descripcion}}</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label>Habitaciones y baños</label><br>
+                            <div class="row">
+
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                                <input class="form-control text-select" type="text" [(ngModel)]= "filtroCatalogo.nrohabitacion" placeholder="Habitaciones" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                                <input class="form-control text-select" type="text" [(ngModel)]= "filtroCatalogo.nrobanios" placeholder="Baños" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <label for="">Precio</label>
+                            <div class="row">
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                                <input class="form-control text-select" type="number" [(ngModel)]= "filtroCatalogo.preciomin" placeholder="Min" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46'>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                                <input class="form-control text-select" type="number" [(ngModel)]= "filtroCatalogo.preciomax" placeholder="Max" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46'>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <label for="">Tamaño</label>
+                            <div class="row">
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                                <input class="form-control text-select" type="text" [(ngModel)]= "filtroCatalogo.tamanmin" placeholder="Min" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46'>
+                              </div>
+                              <div class="col-6 col-md-6 col-lg-6 col-sm-6 col-xl-6">
+                                <input class="form-control text-select" type="text" [(ngModel)]= "filtroCatalogo.tamanmax" placeholder="Max" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46'>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <label class="texto-legal-label" for="">Antigüedad</label>
+                            <input class="form-control text-select" type="text" placeholder="Ingresar solo números" aria-label="default input example" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                          </div><br>
+                          <div class="div-btn-vermas">
+                            <button type="button" (click)="enviarFiltro()" class="btn btn-secondary btn-vermas">BUSCAR</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-9 col-lg-9 col-sm-9 col-xl-9 div-container-imagenes" id="seccion-catalogo">
+                        <div class="div-catalogo-filtro">
+                          <div class="catalogo-filtro">
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>Seleccionar</option>
+                              <option value="1">Precio: Mayor a menor</option>
+                              <option value="2">Precio: Menor a mayor</option>
+                              <option value="3">Antigüedad: Últimas publicaciones</option>
+                              <option value="3">Antigüedad: Publicaciones antigüas</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-xl-3" style="margin:0px">
+                          <div *ngFor="let item of pagedItems">
+                            <div class="unidad-catalogo">
+                              <div class="col-12 col-md-12 col-lg-12 col-sm-12 col-xl-12 div-img-contacto">
+                                <img class="img-contacto" src="../../assets/imagen/edificio.jpg">
+                              </div>
+                              <div class="div-img-contacto-2">
+                                <div class="div-border">
+                                  <div>
+                                    <label class="texto-ciudad">{{item.ciudad}}</label>
+                                  </div>
+
+                                  <div>
+                                    <label class="text-precio" for="">PRECIO: S/. {{item.precio}}</label>
+                                  </div>
+                                    <div class="">
+                                      <p style="margin-bottom: 13px;">
+                                        <span class="text-direccion">{{item.area}} m<sup>2</sup> </span> |
+                                        <span class="text-direccion">{{item.dormitorio}} &nbsp;</span>
+                                        <span class="text-direccion" *ngIf="item.dormitorio == 1">{{dormitorio}}</span>
+                                        <span class="text-direccion" *ngIf="item.dormitorio > 1">{{dormitorios}}</span> |
+                                        <span class="text-direccion">{{item.banio}} &nbsp;</span>
+                                        <span class="text-direccion" *ngIf="item.banio == 1">ba&ntilde;o</span>
+                                        <span class="text-direccion" *ngIf="item.banio > 1">ba&ntilde;os</span>
+                                      </p>
+                                  </div>
+                                    <div class="row">
+                                      <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                        <img class="icon-ubicacion" src="../../assets/icons/icono-ubicacion.png" />
+                                      </div>
+                                      <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-8">
+                                        <label class="text-direccion" for="">{{item.direccion}}</label>
+                                      </div>
+                                    </div>
+                                  <div class="div-btn-vermas">
+                                    <button type="button" class="btn btn-secondary btn-vermas btn-sm" (click)="verDetalleCatalgo()">VER MÁS</button>
+                                  </div><br>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+
+                      <div class="col-sm-12">
+                        <nav aria-label="...">
+                          <ul *ngIf="pager.pages && pager.pages.length" class="pagination pagination-sm paginacion-posicion">
+                            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a class="page-link a-paginacion" (click)="setPage(1)" href="#seccion-catalogo">⊴</a>
+                            </li>
+                            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a class="page-link a-paginacion" (click)="setPage(pager.currentPage - 1)" href="#seccion-catalogo">◄</a>
+                            </li>
+                            <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                <a class="page-link a-paginacion" (click)="setPage(page)" href="#seccion-catalogo">{{page}}</a>
+                            </li>
+                            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a class="page-link a-paginacion" (click)="setPage(pager.currentPage + 1)" href="#seccion-catalogo">►</a>
+                            </li>
+                            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a class="page-link a-paginacion" (click)="setPage(pager.totalPages)" href="#seccion-catalogo">⊵</a>
+                            </li>
+                        </ul>
+                      </nav>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+            <div>
+              <app-testimonios-app></app-testimonios-app>
+          </div>
+          <div>
+              <app-footer-app></app-footer-app>
+          </div>
+          <router-outlet></router-outlet>
+        </div>
+
+
+</div>

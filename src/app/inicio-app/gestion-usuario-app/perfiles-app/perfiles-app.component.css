@@ -1,0 +1,7 @@
+.cabeceras{
+    background-color: darkcyan;
+}
+
+.table>thead {
+    background-color: darkcyan !important;
+}

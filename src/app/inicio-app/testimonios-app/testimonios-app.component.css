@@ -1,0 +1,145 @@
+.testimonios{
+  height: 400px;
+    background-color: #FFE0CE;
+}
+
+.parrafos-testimonios{
+
+  font-size: 20px;
+  letter-spacing: 1pt;
+  word-spacing: -1pt;
+  line-height: 21pt;
+  /* text-align: justify; */
+  text-align: center;
+  margin-bottom: 0px;
+  padding: 70px 200px 35px 200px;
+
+}
+
+.nombre-testimonio{
+    text-align: center;
+    padding-top: 1%;
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1220px) {
+  .parrafos-testimonios{
+    padding: 70px 100px 35px 100px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .parrafos-testimonios{
+    font-size: 15px;
+    padding: 70px 80px 35px 80px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .testimonios {
+    width: 100%;
+  }
+  aside {
+    width: 100%;
+  }
+  .parrafos-testimonios{
+    font-size: 15px;
+  }
+  }
+
+  @media screen and (max-width: 728px) {
+    .parrafos-testimonios{
+      font-size: 14px;
+      padding: 70px 20px 35px 20px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .parrafos-testimonios{
+      font-size: 12px;
+      letter-spacing: 1pt;
+      word-spacing: -1pt;
+      line-height: 17pt;
+      padding: 35px 20px 35px 20px;
+    }
+    .testimonios{
+      height: 350px;
+    }
+    .slidert{
+      height: 350px !important;
+    }
+  }
+
+
+
+
+  @media screen and (max-width: 425px) {
+    .parrafos-testimonios{
+      font-size: 11px;
+      letter-spacing: 0pt;
+      word-spacing: -1pt;
+      line-height: 17pt;
+      padding: 35px 20px 35px 20px;
+    }
+  }
+
+
+  ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.slidert{
+  height: 400px;
+}
+
+
+
+ul.slidert li {
+
+    left: 0px;
+    top: 0px;
+    transition: opacity .5s;
+}
+
+
+
+ul.slidert li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+ul.slidert li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+    width: 100%;
+    height: 100%;
+}
+
+.menu{
+  text-align: center;
+  margin: 0px;
+  top: -38px;
+  height: 0px;
+  position: relative;
+
+}
+
+
+
+.menu li{
+  display: inline-block;
+  text-align: center;
+  padding: 2px;
+}
+
+.menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: #505050;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border-radius: 100%;
+}

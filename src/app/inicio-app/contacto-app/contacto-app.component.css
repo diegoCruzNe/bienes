@@ -1,0 +1,294 @@
+* {
+
+
+}
+.header__row {
+  display: flex;
+  align-items: center;
+
+}
+.container-principal{
+  width: 100%;
+  position: relative;
+
+}
+.container-primario {
+  margin-top: 80px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.container-imagenes{
+  background-color: #EEEEEE;
+  width: 100%;
+  margin-top: 80px; 
+  /*background-image: url(./../../assets/img/logo-principal-web.jpg);*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 80vh;
+  background-size: cover;
+
+}
+
+.img-contacto {
+  width: 100%;
+}
+agm-map {
+  height: 320px;
+  width: 570px;
+}
+.div-map{
+  padding: 0px 0px 3px 15px;
+}
+
+.centrado{
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(15%, -25%);
+  width: 470px;
+  text-align: center;
+
+
+}
+.texto-img {
+  font-size: 4vw;
+  font-weight:450;
+  line-height : 110%;
+ font-family: Montserrat-Regular;
+  text-align:left;
+
+}
+.texto-img-bold {
+  font-size: 4vw;
+  font-weight:450;
+  line-height : 110%;
+ font-family: Montserrat-Bold;
+
+}
+.div-lineal {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  justify-content: center;
+
+}
+
+
+
+
+.containers {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  height: 80px;
+
+}
+
+.logo-casa{
+    width: 69px;
+    border-radius: 50%;
+}
+
+.sub-menu:hover{
+  background-color: #ffa103;
+  cursor: pointer;
+}
+
+header {
+  background-color: #ffa103;
+  height: 80px;
+  width: 100%;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.header__content {
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.social-icons {
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.social-icons i {
+  color: #fff;
+  margin-left: .5rem;
+  transition: .2s all;
+}
+
+.social-icons i:hover {
+  color: var(--color-primary);
+  margin-left: .5rem;
+  transform: translateY(-2px);
+}
+
+a {
+  text-decoration: none;
+}
+.icono-correo {
+  width: 5%;
+  color: #ffa103;
+  border-color: #ffa103;
+  margin-bottom: 0px;
+  font-family: msyhl;
+}
+.text-icono-correo {
+  font-family: msyhl;
+  padding: 10px;
+}
+.icono_telefono {
+  width: 5%;
+  margin-bottom: 0px;
+}
+.text-icono-telefono {
+  font-family: msyhl;
+  padding: 10px;
+}
+.row-contacto {
+  width: 95%;
+
+  margin: 5% auto 10px;
+  border-radius: 15px;
+}
+.titulo-buscador{
+  text-align: center;
+  padding: 28px;
+  margin-bottom: 0px;
+}
+
+.row_direccion {
+  padding: 40px;
+}
+
+
+.mensaje {
+  padding: 40px;
+}
+.texto {
+  font-size: 18px;
+  font-family: msyh;
+}
+.texto-siguenos {
+  font-size: 12px;
+  font-family: msyh;
+}
+.btn-facebook {
+  background-color: #fff;
+  color: #fff;
+  width: 30px;
+  justify-content: center;
+  margin: 5px;
+}
+.btn-instagram {
+  background-color: #fff;
+  color: #fff;
+  width: 30px;
+  justify-content: center;
+  margin: 5px;
+}
+.btn-whatsapp {
+  background-color: #fff;
+  color: #fff;
+  width: 30px;
+  justify-content: center;
+  margin: 5px;
+
+}
+button,select {
+  border: 0px;
+  background-color: #fff;
+}
+.div-contacto{
+  width: 100%;
+  position: relative;
+}
+.di-direccion{
+  text-align: left;
+}
+.div-texto-contacto {
+
+  padding-right: 30%;
+  font-size: 28px;
+}
+.div-texto-direccion {
+  margin: 47px 0px 0px 0px;
+}
+/* mobile */
+
+@media screen and (max-width: 700px) {
+  .div-texto-direccion {
+    margin: 2px;
+    width: 230px
+  }
+  .centrado {
+    width: 50%;
+  }
+
+  .icono-correo {
+    width: 20px;
+    color: #ffa103;
+    border-color: #ffa103;
+
+  }
+  .text-icono-correo {
+    font-family: msyhl;
+    padding: 10px;
+  }
+  .icono_telefono {
+    width: 20px;
+    margin-bottom: 0px;
+  }
+  .text-icono-telefono {
+    font-family: msyhl;
+    padding: 10px;
+  }
+  .row-contacto{
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin: 5% auto 10px;
+  }
+  .di-contacto{
+    text-align: center;
+    padding: 0px 20px;
+  }
+  .di-direccion{
+    text-align: left;
+    margin: 30px 0px;
+  }
+  .container-imagenes{
+    margin-top: 53px;
+  }
+  .container-primario{
+    margin-top: 54px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container-imagenes{
+    height: 30vh;
+  }
+}
+
+
+
+@media screen and (max-width: 278px) {
+  .div-texto-direccion {
+    margin: 0px;
+  }
+}
+
+
+
+
+

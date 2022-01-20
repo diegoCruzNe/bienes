@@ -1,0 +1,110 @@
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+  top: 50%;
+  left: 3px;
+  height: 1em;
+  width: 1em;
+  margin-top: -9px;
+  display: block;
+  position: absolute;
+  color: white;
+  border: 0.15em solid white;
+  border-radius: 1em;
+  box-shadow: 0 0 0.2em #444;
+  box-sizing: content-box;
+  text-align: center;
+  text-indent: 0 !important;
+  font-family: "Courier New",Courier,monospace;
+  line-height: 1.2em;
+  /* content: "▼"; */
+  content: "+";
+  background-color: #024866;
+  padding: 1px;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td.dtr-control:before{
+  content: "-";
+  background-color: #d33333;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+  color: #333 !important;
+    border: 1px solid #f7f5f5;
+    background: linear-gradient(to bottom, white 0%, #dcdcdc 100%);
+}
+
+table.dataTable>tbody>tr.child span.dtr-title {
+  display: inline-block;
+  min-width: 115px;
+  font-weight: bold;
+}
+
+    .mat-header-row, .mat-row {
+        border-bottom-color: rgba(0,0,0,.12);
+        padding: 0 24px;
+    }
+
+  @media screen and (max-width: 960px) {
+    .mat-table {
+      border: 0;
+      vertical-align: middle
+    }
+  
+    .mat-table caption {
+      font-size: 1em;
+    }
+    
+    /*  Enable this to hide header
+    .mat-table .mat-header-cell {
+      
+      border: 10px solid;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    */
+    .mat-table .mat-row {
+      border-bottom: 5px solid #ddd;
+      display: block;
+    }
+    /*
+    .mat-table .mat-row:nth-child(even) {background: #CCC}
+    .mat-table .mat-row:nth-child(odd) {background: #FFF}
+    */
+    .mat-table .mat-cell {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      font-weight: bold;
+      height:30px;
+      margin-bottom: 4%;
+    }
+    .mat-table .mat-cell:before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: normal;
+      
+      font-size: .85em;
+    }
+    .mat-table .mat-cell:last-child {
+      border-bottom: 0;
+    }
+      .mat-table .mat-cell:first-child {
+      margin-top: 4%;
+    }
+  }
+
+  @media (max-width:425px) {
+    .titulo_cabecera{
+      min-width: 115px;
+    }
+  }

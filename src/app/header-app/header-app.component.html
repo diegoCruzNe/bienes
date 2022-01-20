@@ -1,0 +1,44 @@
+<header id="header" class="header">
+    <div class="containers" >
+      <div class="header__row">
+        <div class="header__logo">
+          <a href="#">
+            <img src="{{ruta_imagen}}{{userAvatar}}" class="logo-casa" alt="Site logo">
+          </a>
+        </div>
+        <div class="header__content">
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item ocultar-logo">
+                <div class="header__logo" style="text-align: center;">
+                  <a href="#">
+                    <img src="{{ruta_imagen}}{{userAvatar}}" class="logo-casa-movil" alt="Site logo">
+                  </a>
+                </div>
+              </li>
+              <li class="header__item"><a routerLink= "" (click)="cerrarMenu()" class="header__link">Quienes Somos</a></li>
+              <li class="header__item nav-item dropdown">
+                <a href="" class="header__link nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Inmuebles</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="padding: 15px 5px;background-color:#383837 ;border-radius:10px">
+                    <li><a class="dropdown-item sub-menu" style="padding: 5px;color:white;border-radius: 10px;" (click)="cerrarMenu()" >Comprar Inmueble</a></li>
+                    <li><a routerLink="/vender-inmueble" class="dropdown-item sub-menu" style="padding: 5px;color:white;border-radius: 10px;" (click)="cerrarMenu()"  >Vender Inmueble</a></li>
+                    <li><a routerLink= "/construir-inmueble" class="dropdown-item sub-menu" style="padding: 5px;color:white;border-radius: 10px;" (click)="cerrarMenu()" >Construir Inmueble</a></li>
+                  </ul>
+              </li>
+              <li class="header__item">
+                <a routerLink ="/asesorialegal" (click)="cerrarMenu()" class="header__link">Asesoría legal</a>
+              </li>
+              <li class="header__item"><a routerLink ="/contacto"  (click)="cerrarMenu()" class="header__link">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <button id="hamburger" class="hamburger" aria-label="Hamburger mobile menu toggle" href="#offcanvasExample" >
+          <span class="hamburger__span"></span>
+          <span class="hamburger__span"></span>
+          <span class="hamburger__span"></span>
+        </button>
+
+      </div>
+    </div>
+  </header>

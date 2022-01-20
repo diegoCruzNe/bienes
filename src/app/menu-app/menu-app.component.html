@@ -1,0 +1,198 @@
+
+<div>
+    <button class="boton-menu color_principal_background" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
+      <img src="../../assets/img/boton-abrir-m.svg" style="width: 25px;">
+    </button>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+      <div class="offcanvas-header" style="justify-content: center;">
+        <!-- <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel" style="font-size:20px;margin-top:20px">BIENES RAICES</h5> -->
+        <img src="../../assets/icons/ide-solution-menu.png" style="width: 136px;" >
+        <button style="display: none;" type="button" id="cerrar_menu" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+          <!-- <ul class="list-group list-group-flush">
+              <li class="list-group-item">Inicio</li>
+              <li class="list-group-item">Configuración del Sistema</li>
+              <li class="list-group-item">Gestión de Usuarios</li>
+              <li class="list-group-item">Gestión de Venta de Inmobiliaria</li>
+              <li class="list-group-item">Gestión de Construcción y Ampliación</li>
+              <li class="list-group-item">Asistencia Legal</li>
+            </ul> -->
+            <ul class="list">
+
+              <li class="list__item" routerLinkActive="active" [routerLink]="['home']" (click)="cerrarMenu()">
+                  <div class="list__button">
+                      <img src="assets/img/dashboard.svg" class="list__img">
+                      <a class="nav__link">Inicio</a>
+                  </div>
+              </li>
+
+             <!--  <li class="list__item" routerLinkActive="active" [routerLink]="['solicitudes']">
+                <div class="list__button">
+                    <img src="assets/img/stats.svg" class="list__img">
+                    <a  class="nav__link">Configuración del sistema</a>
+                </div>
+            </li> -->
+
+            <li class="list__item list__item--click" (click)="presionar()">
+                <div class="list__button list__button--click" >
+                    <img src="assets/img/docs.svg" class="list__img">
+                    <a class="nav__link">Configuración del Sistema</a>
+                    <img src="assets/img/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show" >
+                  <li class="list__inside" routerLinkActive="active" [routerLink]="['config-sistema/portal-web']" (click)="cerrarMenu()">
+                      <a class="nav__link_submenu nav__link--inside">Portal Web</a>
+                  </li>
+                </ul>
+
+            </li>
+  
+              <li class="list__item list__item--click" (click)="presionar()">
+                  <div class="list__button list__button--click" >
+                      <img src="assets/img/docs.svg" class="list__img">
+                      <a class="nav__link">Gestión de usuarios</a>
+                      <img src="assets/img/arrow.svg" class="list__arrow">
+                  </div>
+  
+                  <ul class="list__show">
+                    <li class="list__inside" class="list__inside" routerLinkActive="active" [routerLink]="['gestion-usuario/usuario']" (click)="cerrarMenu()">
+                        <a class="nav__link_submenu nav__link--inside">Usuarios</a>
+                    </li>
+
+                    <li class="list__inside" routerLinkActive="active"  [routerLink]="['gestion-usuario/perfiles']" (click)="cerrarMenu()">
+                        <a class="nav__link_submenu nav__link--inside">Perfiles</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Clientes</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Historial de Eventos</a>
+                    </li>
+                  </ul>
+  
+              </li>
+
+              <li class="list__item list__item--click" (click)="presionar()">
+                <div class="list__button list__button--click" >
+                    <img src="assets/img/message.svg" class="list__img">
+                    <a class="nav__link">Gestión de Venta de Inmobiliaria</a>
+                    <img src="assets/img/arrow.svg" class="list__arrow">
+                </div>
+
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Catálogo</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Solicitud poner a la Venta</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Solicitud de Compra</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Solicitudes Rechazadas</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Proceso de Compra</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link_submenu nav__link--inside">Inmuebles Vendidos</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list__item list__item--click" (click)="presionar()">
+                <div class="list__button list__button--click" >
+                    <img src="assets/img/message.svg" class="list__img">
+                    <a class="nav__link">Gestión de Construcción y Ampliación</a>
+                    <img src="assets/img/arrow.svg" class="list__arrow">
+                </div>
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Terrenos</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Solicitud de Contrucción y A.</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Solicitudes Rechazadas</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Proceso de Construcción</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Construcciones Concluidas</a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li class="list__item list__item--click" (click)="presionar()">
+                <div class="list__button list__button--click" >
+                    <img src="assets/img/message.svg" class="list__img">
+                    <a class="nav__link">Asistencia Legal</a>
+                    <img src="assets/img/arrow.svg" class="list__arrow">
+                </div>
+                <ul class="list__show">
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Casos</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Solicitud de Asistencia Legal</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Solicitudes Rechazadas</a>
+                    </li>
+                    <li class="list__inside">
+                        <a class="nav__link nav__link--inside">Proceso de Asistencia Legal</a>
+                    </li>
+                </ul>
+
+            </li>
+  
+  
+              <li class="list__item">
+                  <div class="list__button">
+                      <img src="assets/img/stats.svg" class="list__img">
+                      <a  class="nav__link">Estadisticas</a>
+                  </div>
+              </li>
+  
+              <li class="list__item list__item--click" (click)="presionar()">
+                  <div class="list__button list__button--click" >
+                      <img src="assets/img/bell.svg" class="list__img">
+                      <a  class="nav__link">Notificaciones</a>
+                      <img src="assets/img/arrow.svg" class="list__arrow">
+                  </div>
+  
+                  <ul class="list__show">
+                      <li class="list__inside">
+                          <a class="nav__link nav__link--inside">Estoy dentro</a>
+                      </li>
+  
+                      <li class="list__inside">
+                          <a class="nav__link nav__link--inside">Estoy dentro</a>
+                      </li>
+  
+                      <li class="list__inside">
+                          <a class="nav__link nav__link--inside">Estoy dentro</a>
+                      </li>
+                  </ul>
+  
+              </li>
+  
+  
+              <li class="list__item">
+                  <div class="list__button">
+                      <img src="assets/img/message.svg" class="list__img">
+                      <a href="#" class="nav__link">Contacto</a>
+                  </div>
+              </li>
+  
+          </ul>
+      </div>
+  </div>
+</div>

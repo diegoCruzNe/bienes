@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  :root {
+    --color-primary: #00CCFF;
+    --br: .3rem;
+  }
+
+  main {
+    margin: 4rem 0;
+  }
+
+  h1,
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  .containers {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    height: 80px;
+
+  }
+
+  .logo-casa{
+      width: 69px;
+      border-radius: 50%;
+  }
+
+  .sub-menu:hover{
+    background-color: #ffa103;
+    cursor: pointer;
+  }
+
+  header {
+    background-color: #ffa103;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
+  }
+
+  .header__row {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .header__content {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .header__list {
+    list-style: none;
+  }
+
+  .header__item {
+    display: inline-block;
+    margin-right: 1.5rem;
+  }
+
+  .header__link {
+    font-size: 1.1rem;
+    color: #fff;
+    transition: all .2s;
+
+  }
+
+  .header__item:hover {
+    transform: translateY(-2px);
+    transition: all .8s cubic-bezier(.2,.8,.2,1.2) 0s!important;
+  }
+
+  .header__link:hover {
+    color: white;
+
+    transform: translateY(-2px);
+    transition: all .8s cubic-bezier(.2,.8,.2,1.2) 0s!important;
+  }
+
+  .header__button {
+    background-color: transparent;
+    padding: .5rem .8rem;
+    border: none;
+    /* background-color: var(--color-primary); */
+    background-color: transparent;
+    color: var(--color-primary);
+    border: solid 2px var(--color-primary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: var(--br);
+    transition: all .2s;
+  }
+
+  .header__button:hover {
+    transform: translateY(-2px);
+    background-color: var(--color-primary);
+    color: #fff;
+
+  }
+
+  .hamburger {
+    height: 16px;
+    width: 26px;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    transition: all .3s;
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+
+    display: none;
+  }
+
+  .hamburger__span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s;
+    border-radius: var(--br);
+  }
+
+  .hamburger__span:nth-child(1) {
+    top: 0;
+  }
+
+  .hamburger__span:nth-child(2) {
+    top: 50%;
+  }
+
+  .hamburger__span:nth-child(3) {
+    top: 100%;
+  }
+
+  .header.expanded .hamburger {
+    transform: rotate(180deg);
+  }
+
+  .header.expanded .hamburger__span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header.expanded .hamburger__span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .header.expanded .hamburger__span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .social-icons {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+  }
+
+  .social-icons i {
+    color: #fff;
+    margin-left: .5rem;
+    transition: .2s all;
+  }
+
+  .social-icons i:hover {
+    color: var(--color-primary);
+    margin-left: .5rem;
+    transform: translateY(-2px);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .ocultar-logo{
+    display: none;
+  }
+
+
+  /* mobile */
+  @media only screen and (max-width: 700px) {
+    .hamburger {
+      display: block;
+    }
+
+    .header__content {
+      position: fixed;
+      top: 0;
+      left: -240px;
+      height: 100%;
+      width: 240px;
+      background-color: #ffa103;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem 1rem;
+      transition: all .5s ease;
+      transform: translateX(0);
+    }
+
+    .header.expanded .header__content {
+      transform: translate(100%);
+      overflow: auto;
+    }
+
+    .header__nav {
+      width: 100%;
+    }
+
+    .header__item {
+      display: block;
+      margin-bottom: .7rem;
+      padding: 17px 0px;
+      text-align: initial;
+    }
+
+    .header__link {
+      font-size: 1.4rem;
+    }
+
+    .header__cta {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .header__button {
+      font-size: 1.3rem;
+      width: 100%;
+    }
+
+    .social-icons {
+      margin-left: 0;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .header__row {
+      display: flex;
+      align-items: center;
+      height: 70%;
+    }
+    header{
+      height: 54px;
+    }
+
+    .logo-casa{
+      padding: 12px;
+    }
+    
+    .ocultar-logo{
+      display: block;
+      margin: 0px !important;
+    }
+
+    .logo-casa-movil{
+      width: 114px;
+      border-radius: 50%;
+      padding: 6px;
+    }
+    
+  }
+
+  

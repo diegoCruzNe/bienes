@@ -1,0 +1,43 @@
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+    top: 50%;
+    left: 3px;
+    height: 1em;
+    width: 1em;
+    margin-top: -9px;
+    display: block;
+    position: absolute;
+    color: white;
+    border: 0.15em solid white;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em #444;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: "Courier New",Courier,monospace;
+    line-height: 1.2em;
+    /* content: "▼"; */
+    content: "+";
+    background-color: #024866;
+    padding: 1px;
+  }
+
+.btn-agregar-usuario{
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 17px;
+    width: 170px;
+    border-radius: 20px;
+}
+
+.dataTables_filter input[type="search"] {
+    width: 300px !important;
+}
+
+.paginate_button {
+    border-radius: 50px !important;
+}
+.card-usuario{
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}

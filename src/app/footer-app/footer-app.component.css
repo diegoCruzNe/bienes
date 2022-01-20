@@ -1,0 +1,88 @@
+footer{
+    height: 215px;
+    background-color: #282828;
+}
+
+.contenido-footer{
+    display: flex;
+    color: white;
+}
+
+.parrafo-quienes-somos{
+    font-size: 12px;
+    color: gray;
+}
+
+.quienes-somos{
+  width: 40%;
+  padding-left: 4%;
+  padding-right: 5%;
+  padding-top: 3%;
+  text-align: left;
+}
+
+.sobre-nosotros{
+    width: 30%;
+    padding-left: 4%;
+    padding-right: 5%;
+    padding-top: 3%;
+}
+
+.servicio-cliente{
+    width: 30%;
+    padding-left: 4%;
+    padding-right: 5%;
+    padding-top: 3%;
+}
+
+.vl {
+    margin-top: 35px;
+    border-left: 2px solid #999999;
+    height: 154px;
+  }
+.div-icons{
+    margin-top: 15px;
+}
+.icon-footer{
+    margin-right: 8px;
+    font-size: 25px;
+}
+
+.titulo-footer{
+    margin-bottom: 1px;
+}
+
+@media screen and (max-width: 500px) {
+  .parrafo-quienes-somos{
+    width: 120%;
+  }
+  footer {
+    height: 410px;
+  }
+  .div-icons{
+    width: 150%;
+  }
+  .titulo-footer{
+    width: 130%;
+  }
+  .contenido-footer{
+    display: block;
+  }
+  .quienes-somos {
+    width: 80%;
+  }
+  .sobre-nosotros{
+    width: 80%;
+  }
+  .servicio-cliente{
+    width: 80%;
+  }
+  .vl{
+    margin-top: 10px;
+    border-left: 2px solid #111;
+    height: 5px;
+  }
+  .contenido-footer{
+    padding: 0px 12px;
+  }
+  }

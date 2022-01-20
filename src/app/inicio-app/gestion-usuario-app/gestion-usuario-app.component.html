@@ -1,0 +1,275 @@
+<div style="text-align: center;margin-top:70px;font-size:22px;font-weight:bold" class="color_principal">
+   LISTA DE USUARIOS
+</div>
+
+<div>
+  <button type="button" class="btn btn-sm btn-agregar-usuario color_principal_background_buttons"  (click)="agregar_cliente()">{{button_agregar_cliente}}</button>
+</div>
+
+<div [hidden]="agregar_cliente_hiddden">
+    <div class="card-usuario">
+        <div class="">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">DNI</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Dirección</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">F. Nacimiento</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Usuario</label>
+            </div>
+            <div class="form-floating">
+            <input type="password" class="form-control form-control-sm" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Contraseña</label>
+            </div>
+        </div>
+    </div>
+
+ </div>
+
+<!-- <div class="mat-elevation-z8" style="margin: 20px;">
+    <mat-table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="No."> {{element.position}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Name"> {{element.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Weight"> {{element.weight}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Symbol"> {{element.symbol}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div> -->
+
+  <div style="margin-top: 20px;margin:20px 50px">
+    <table  datatable [dtOptions]="dtOptions"  class="table table-bordered row-border hover">
+        <thead >
+            <tr>
+                <th class="color_cabecera_tabla"><span  class="titulo_cabecera">Nombre Completo</span> </th>
+                <th class="color_cabecera_tabla"><span  class="titulo_cabecera">Email</span></th>
+                <th class="color_cabecera_tabla"><span  class="titulo_cabecera">Celular</span></th>
+                <th class="color_cabecera_tabla"><span  class="titulo_cabecera">Usuario</span></th>
+                <th class="color_cabecera_tabla"><span  class="titulo_cabecera">Estado</span></th>
+                <th class="color_cabecera_tabla"><span  class="titulo_cabecera">Opciones</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  (click)="presionar()"><button class="btn">Presionar</button></span> 
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                <td>
+                    <span  style="color:blue"><b>Activo</b></span>
+                    <span  style="color:red"><b>Inactivo</b></span>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+</div>
